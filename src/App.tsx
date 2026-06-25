@@ -1,6 +1,7 @@
 import { Navbar } from './components/Navbar'
 import { Hero } from './components/Hero'
 import { Manifesto } from './components/Manifesto'
+import { TrustBar } from './components/TrustBar'
 import { LabModel } from './components/LabModel'
 import { FlagshipProduct } from './components/FlagshipProduct'
 import { BuildAreas } from './components/BuildAreas'
@@ -14,6 +15,7 @@ function App() {
       <Navbar />
       <main>
         <Hero />
+        <TrustBar />
         <Manifesto />
         <LabModel />
         <FlagshipProduct />

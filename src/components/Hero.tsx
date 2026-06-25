@@ -129,6 +129,22 @@ export function Hero() {
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>
           </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 18 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.44, ease: [0.22, 1, 0.36, 1] }}
+            className="mt-7 flex flex-wrap items-center gap-2.5 text-pearl/50"
+          >
+            {['Building frontier products', 'Starting with in.culcate', 'Error606'].map((item) => (
+              <span
+                key={item}
+                className="rounded-full border border-white/[0.08] bg-night/45 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] backdrop-blur"
+              >
+                {item}
+              </span>
+            ))}
+          </motion.div>
         </div>
       </div>
 
