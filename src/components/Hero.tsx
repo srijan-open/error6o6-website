@@ -32,18 +32,19 @@ export function Hero() {
       ref={sectionRef}
       onMouseMove={onMove}
       onMouseLeave={() => setGlow((g) => ({ ...g, on: false }))}
-      className="relative flex min-h-screen items-center overflow-hidden bg-night pt-16"
+      className="relative flex min-h-[96svh] items-center overflow-hidden bg-night pt-20 sm:min-h-screen sm:pt-16"
     >
       {/* Globe asset — right side / background */}
       <div className="pointer-events-none absolute inset-0">
         <img
           src={globe}
           alt="Error6o6 digital globe on the red horizon"
-          className="absolute right-0 top-0 h-full w-full object-cover object-right opacity-90 md:w-[72%] lg:w-[64%]"
+          className="absolute right-[-26%] top-16 h-[78%] w-[150%] object-cover object-[62%_center] opacity-70 saturate-125 sm:right-[-12%] sm:top-0 sm:h-full sm:w-[118%] md:right-0 md:w-[76%] md:opacity-88 lg:w-[66%] xl:w-[62%]"
         />
         {/* fade globe into background on the left + bottom */}
-        <div className="absolute inset-0 bg-gradient-to-r from-night via-night/85 to-transparent md:via-night/60" />
-        <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-night to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-night via-night/88 to-night/20 md:via-night/62 md:to-transparent" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_72%_42%,rgba(231,29,36,0.22),transparent_34%),linear-gradient(to_bottom,transparent_56%,#0A0A0C_96%)]" />
+        <div className="absolute inset-x-0 bottom-0 h-52 bg-gradient-to-t from-night via-night/70 to-transparent" />
       </div>
 
       {/* Drifting grid */}
@@ -54,7 +55,7 @@ export function Hero() {
 
       {/* Cursor-following crimson glow */}
       <div
-        className="pointer-events-none absolute h-[480px] w-[480px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-crimson/20 blur-[120px] transition-opacity duration-500"
+        className="pointer-events-none absolute h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-crimson/18 blur-[140px] transition-opacity duration-700"
         style={{
           left: `${glow.x}%`,
           top: `${glow.y}%`,
@@ -81,12 +82,12 @@ export function Hero() {
 
       {/* Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-5 sm:px-8">
-        <div className="max-w-2xl">
+        <div className="max-w-[46rem] pb-12 pt-10 sm:pb-0 sm:pt-0">
           <motion.div
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
-            className="mb-6 inline-flex items-center gap-3 rounded-full border border-crimson/25 bg-crimson/[0.05] px-4 py-1.5"
+            className="mb-6 inline-flex items-center gap-3 rounded-full border border-crimson/25 bg-night/45 px-4 py-1.5 shadow-[0_0_40px_-18px_rgba(231,29,36,0.9)] backdrop-blur-md sm:mb-7"
           >
             <span className="h-1.5 w-1.5 animate-pulse-glow rounded-full bg-crimson" />
             <span className="label-mono text-pearl/70">AI-Native Product Lab</span>
@@ -96,7 +97,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.1, ease: [0.22, 1, 0.36, 1] }}
-            className="font-display text-5xl font-bold leading-[1.02] tracking-tight text-pearl sm:text-6xl lg:text-7xl"
+            className="font-display text-[3.45rem] font-bold leading-[0.98] tracking-[-0.055em] text-pearl sm:text-6xl lg:text-7xl xl:text-[5.35rem]"
           >
             Build beyond
             <br />
@@ -107,7 +108,7 @@ export function Hero() {
             initial={{ opacity: 0, y: 22 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.22, ease: [0.22, 1, 0.36, 1] }}
-            className="mt-7 max-w-xl font-body text-lg leading-relaxed text-pearl/65"
+            className="mt-7 max-w-[35rem] font-body text-[1.02rem] leading-relaxed text-pearl/68 sm:text-lg"
           >
             Error6o6 builds frontier products that turn uncertainty into new
             systems, stories, and intelligence.
@@ -119,11 +120,11 @@ export function Hero() {
             transition={{ duration: 0.8, delay: 0.34, ease: [0.22, 1, 0.36, 1] }}
             className="mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
-            <Button href="#lab-model">
+            <Button href="#lab-model" className="w-full sm:w-auto">
               Explore the Lab
               <ArrowUpRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
             </Button>
-            <Button href="#flagship" variant="ghost">
+            <Button href="#flagship" variant="ghost" className="w-full sm:w-auto">
               View in.culcate
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </Button>

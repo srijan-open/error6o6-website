@@ -13,16 +13,16 @@ type Node = {
 
 const nodes: Node[] = [
   { name: 'in.culcate', kind: 'Flagship Product', flagship: true, pos: { top: '16%', left: '78%' } },
-  { name: 'Project A', kind: 'Future Product', pos: { top: '74%', left: '80%' } },
-  { name: 'Project B', kind: 'Future Product', pos: { top: '82%', left: '30%' } },
-  { name: 'Project C', kind: 'Future Product', pos: { top: '24%', left: '20%' } },
+  { name: "Error's Lab", kind: 'Future Product', pos: { top: '74%', left: '80%' } },
+  { name: 'Capsoule', kind: 'Future Product', pos: { top: '82%', left: '30%' } },
+  { name: 'Hi-fen', kind: 'Future Product', pos: { top: '24%', left: '20%' } },
 ]
 
 function NodeCard({ node }: { node: Node }) {
   return (
     <div
       className={cn(
-        'w-[170px] rounded-xl border bg-night/80 p-4 backdrop-blur-sm transition-all duration-500 hover:-translate-y-1',
+        'w-[180px] rounded-2xl border bg-night/82 p-4 shadow-[inset_0_1px_0_rgba(255,255,255,0.035)] backdrop-blur-sm transition-all duration-500 hover:-translate-y-1',
         node.flagship
           ? 'border-crimson/45 shadow-[0_0_40px_-12px_rgba(231,29,36,0.6)]'
           : 'border-white/10 hover:border-crimson/35',
@@ -55,7 +55,7 @@ function NodeCard({ node }: { node: Node }) {
 
 export function BrandArchitecture() {
   return (
-    <section className="relative overflow-hidden border-t border-white/[0.04] bg-charcoal/30 py-24 sm:py-32">
+    <section className="relative overflow-hidden border-t border-white/[0.04] bg-charcoal/30 py-24 sm:py-32 lg:py-36">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[640px] w-[640px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-oxblood/10 blur-[150px]" />
 
       <div className="relative mx-auto max-w-7xl px-5 sm:px-8">

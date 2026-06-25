@@ -66,7 +66,30 @@
 
   /* Card with subtle border + animated glow on hover */
   .glow-card {
-    @apply relative rounded-2xl border border-white/[0.06] bg-charcoal/40 backdrop-blur-sm transition-all duration-500;
+    @apply relative overflow-hidden rounded-2xl border border-white/[0.06] bg-charcoal/40 backdrop-blur-sm transition-all duration-500;
+  }
+  .glow-card::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(circle at 20% 0%, rgba(231, 29, 36, 0.16), transparent 34%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.045), transparent 42%);
+    opacity: 0.72;
+    pointer-events: none;
+  }
+  .glow-card::after {
+    content: '';
+    position: absolute;
+    inset: 1px;
+    border-radius: inherit;
+    background-image:
+      linear-gradient(to right, rgba(231, 29, 36, 0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(231, 29, 36, 0.035) 1px, transparent 1px);
+    background-size: 34px 34px;
+    opacity: 0.32;
+    mask-image: linear-gradient(to bottom, #000, transparent 75%);
+    pointer-events: none;
   }
   .glow-card:hover {
     border-color: rgba(231, 29, 36, 0.45);
@@ -75,6 +98,10 @@
       0 24px 60px -20px rgba(231, 29, 36, 0.35),
       inset 0 1px 0 rgba(255, 255, 255, 0.04);
     transform: translateY(-4px);
+  }
+
+  .lab-card-content {
+    @apply relative z-10;
   }
 
   /* Gradient animated border wrapper */
@@ -201,7 +228,11 @@
   animation: pulse-glow 4s ease-in-out infinite;
 }
 .animate-grid-drift {
-  animation: grid-drift 8s linear infinite;
+  animation: grid-drift 18s linear infinite;
+}
+
+.animate-slow-breathe {
+  animation: pulse-glow 9s ease-in-out infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {

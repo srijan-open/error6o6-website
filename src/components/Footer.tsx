@@ -57,7 +57,7 @@ export function Footer() {
 
         <div className="mt-14 flex flex-col items-start justify-between gap-4 border-t border-white/[0.06] pt-7 sm:flex-row sm:items-center">
           <span className="font-mono text-xs tracking-wide text-pearl/35">
-            © 2026 Error6o6 Technologies — AI-native product lab.
+            error6o6.com
           </span>
           <span className="label-mono text-pearl/30">One company. Multiple frontiers.</span>
         </div>
