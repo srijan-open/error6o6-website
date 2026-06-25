@@ -81,7 +81,7 @@ export function FlagshipProduct() {
                   {/* viewport */}
                   <div className="relative aspect-[4/3] overflow-hidden">
                     <img
-                      src="/assets/error6o6-globe-horizon.jpg"
+                      src={`${import.meta.env.BASE_URL}assets/error6o6-globe-horizon.jpg`}
                       alt="in.culcate cinematic content surface"
                       className="absolute inset-0 h-full w-full object-cover opacity-90"
                     />

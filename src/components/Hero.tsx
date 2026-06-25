@@ -4,7 +4,7 @@ import { ArrowUpRight, ArrowRight } from 'lucide-react'
 import { Button } from './ui/Button'
 import { ParticleField } from './ui/ParticleField'
 
-const globe = '/assets/error6o6-globe-horizon.jpg'
+const globe = `${import.meta.env.BASE_URL}assets/error6o6-globe-horizon.jpg`
 
 const floatingLabels = [
   { text: 'FRONTIER SYSTEMS', className: 'top-[18%] right-[8%]', delay: 0 },
