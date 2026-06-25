@@ -1,69 +1,25 @@
 import { cn } from '../../lib/utils'
 
-/** Error6o6 wordmark — "Error" in soft white, "6o6" in crimson (per brandboard). */
-export function Wordmark({ className }: { className?: string }) {
+const logoSrc = `${import.meta.env.BASE_URL}assets/error6o6-logo.jpg`
+
+/** Actual Error6o6 logo supplied by the founder: /error/606 red-black badge. */
+export function BrandLogo({ className }: { className?: string }) {
   return (
-    <span
+    <img
+      src={logoSrc}
+      alt="Error6o6 logo"
       className={cn(
-        'select-none font-display text-xl font-bold tracking-tight text-pearl',
+        'h-12 w-auto rounded-xl object-contain shadow-[0_0_24px_-10px_rgba(231,29,36,0.95)] ring-1 ring-crimson/18',
         className,
       )}
-    >
-      Error<span className="text-crimson">6o6</span>
-    </span>
+    />
   )
 }
 
-/** The /error/606 stamp badge — distilled SVG interpretation of the brand mark. */
+export function Wordmark({ className }: { className?: string }) {
+  return <BrandLogo className={cn('h-10 sm:h-11', className)} />
+}
+
 export function StampMark({ className }: { className?: string }) {
-  return (
-    <svg
-      viewBox="0 0 96 100"
-      className={cn('h-10 w-auto', className)}
-      role="img"
-      aria-label="Error6o6"
-      fill="none"
-    >
-      {/* notch posts */}
-      <rect x="26" y="2" width="6" height="12" rx="2" fill="#E71D24" />
-      <rect x="64" y="2" width="6" height="12" rx="2" fill="#E71D24" />
-      {/* outer red frame */}
-      <rect
-        x="4"
-        y="10"
-        width="88"
-        height="84"
-        rx="16"
-        stroke="#E71D24"
-        strokeWidth="5"
-        fill="#0A0A0C"
-      />
-      {/* /error/ tab */}
-      <rect x="18" y="26" width="60" height="20" rx="6" fill="#E71D24" />
-      <text
-        x="48"
-        y="40"
-        textAnchor="middle"
-        fontFamily="'IBM Plex Mono', monospace"
-        fontSize="12"
-        fontStyle="italic"
-        fontWeight="600"
-        fill="#0A0A0C"
-      >
-        /error/
-      </text>
-      {/* 606 */}
-      <text
-        x="48"
-        y="80"
-        textAnchor="middle"
-        fontFamily="'Space Grotesk', sans-serif"
-        fontSize="30"
-        fontWeight="700"
-        fill="#F5F5F7"
-      >
-        606
-      </text>
-    </svg>
-  )
+  return <BrandLogo className={cn('h-14', className)} />
 }
